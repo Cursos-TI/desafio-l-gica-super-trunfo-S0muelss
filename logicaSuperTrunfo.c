@@ -50,7 +50,7 @@ int main() {
 	float pibDaCarta01;
 	int pontosTuristicosDaCarta01;
     int indiceDeComparacao01 = 0; //adicionado para cada comparação ser implementado e no final será nesscesário para determinar o vencedor
-	
+	 int opcaocarta;
 	char codigoDeCarta02 [50];
 	char estadoDaCarta02;
 	char nomeDaCidadeDaCarta02 [50];
@@ -165,42 +165,47 @@ int main() {
     printf("Densidade Populacional (menor vence): %d\n", densidadePopulacional01 < densidadePopulacional02);
     printf("PIB per Capita: %d\n", pibPerCapta01 > pibPerCapta02);
     printf("Super Poder: %d\n", superpoder01 > superpoder02);
+ 
+     // entrada do menu interativo do player 
+     // assim escolhendo os atributo das duas cartas que serão comparadas
 
-     //comparação dos atributos
+     printf("ESCOLHA UM ATRIBUTO A SEGUIR\n");
 
-     //comparação do atributo super poder
-     if (superpoder01 > superpoder02){
-        printf ("A carta 01 tem um super poder maior");
-        indiceDeComparacao01++;
-     } else {
-        printf ("A carta 02 ganhou tem um super poder maior");
-        indiceDeComparacao02++;
-     }
+     printf("[1] - pontos turisticos\n");
+
+     printf("[2] - população\n");
+
      
-     //comparação do atributo pib
-     if (pibDaCarta01 > pibDaCarta02){
-        printf("A carta 01 tem o PIB maior");
-        indiceDeComparacao01++
+
+     scanf("%d", opcaocarta);
+
+
+
+ // escolha de atrubutos junto com a coparação deles
+
+   switch(opcaocarta){
+      case 1:
+     if (pontosTuristicosDaCarta01 > pontosTuristicosDaCarta02){
+       printf("a carta 01 venceu por  ter mais pontos turisticos que a carta 02");
+       indiceDeComparacao01++;
      } else {
-        printf("A carta 02 tem o PIB maior");
-        indiceDeComparacao02++;
+      printf("A carta 02 venceu por ter mais pontos turistico que a carta 01");
+      indiceDeComparacao02++; 
+     } 
+     break;
+     case 2:
+     if(pontosTuristicosDaCarta01 > populacaoDaCarta02){
+      printf("A carta 01 venceu pois tem a população maior que a carta 02");
+      
+     }else{
+      printf("A carta 02 venceu pois tem a população maior que a carta 01");
+    
      }
+     break;
+   }
 
-     // comparação do atributo área
-     if (areaDaCarta01 > areaDaCarta02) {
-    printf("A carta 01 tem a área maior");
-    indiceDeComparacao01++;
-     } else {
-        printf("A carta 02 tem a área maior");
-        indiceDeComparacao02++
-     }
+    //comparação dos atributos
 
-     // comparação dos indices de comparação
-
-     if (indiceDeComparacao01 > indiceDeComparacao02){
-        printf ("A carta 01 %s", nomeDaCidadeDaCarta01, "Venceu");
-     } else{
-        printf ("A carta 02 %s", nomeDaCidadeDaCarta02, "Venceu");
      }
 
     return 0;
