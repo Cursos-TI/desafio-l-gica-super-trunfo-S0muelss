@@ -49,7 +49,6 @@ int main() {
 	float areaDaCarta01;
 	float pibDaCarta01;
 	int pontosTuristicosDaCarta01;
-    int indiceDeComparacao01 = 0; //adicionado para cada comparação ser implementado e no final será nesscesário para determinar o vencedor
 	 int opcaocarta;
 	char codigoDeCarta02 [50];
 	char estadoDaCarta02;
@@ -58,7 +57,7 @@ int main() {
 	float areaDaCarta02;
 	float pibDaCarta02;
 	int pontosTuristicosDaCarta02;
-	 int indiceDeComparacao02 = 0;
+	 
 	
    //entrada das informações carta 01
    
@@ -177,7 +176,7 @@ int main() {
 
      
 
-     scanf("%d", opcaocarta);
+     scanf("%d", &opcaocarta);
 
 
 
@@ -186,27 +185,21 @@ int main() {
    switch(opcaocarta){
       case 1:
      if (pontosTuristicosDaCarta01 > pontosTuristicosDaCarta02){
-       printf("a carta 01 venceu por  ter mais pontos turisticos que a carta 02");
-       indiceDeComparacao01++;
+       printf("a carta 01 venceu por ter mais pontos turisticos que a carta 02");
      } else {
       printf("A carta 02 venceu por ter mais pontos turistico que a carta 01");
-      indiceDeComparacao02++; 
      } 
      break;
      case 2:
      if(pontosTuristicosDaCarta01 > populacaoDaCarta02){
       printf("A carta 01 venceu pois tem a população maior que a carta 02");
-      
      }else{
       printf("A carta 02 venceu pois tem a população maior que a carta 01");
-    
      }
      break;
-   }
-
-    //comparação dos atributos
-
-     }
-
-    return 0;
+   }  return 0;
 }
+     
+
+    
+
